@@ -34,7 +34,7 @@ jobs:
 
     - name: Build executable with PyInstaller for ${{ matrix.arch }}
       run: |
-        pyinstaller --onefile --noconsole --icon=favicon.ico --name "PPSUC-OneClickLogin-${{ matrix.arch }}" PPSUC-OneClickLogin.py
+        pyinstaller --onefile --noconsole --icon=favicon.ico --add-data "favicon.ico;." --name "PPSUC-OneClickLogin-${{ matrix.arch }}" PPSUC-OneClickLogin.py
 
     - name: Upload Artifacts
       uses: actions/upload-artifact@v4
